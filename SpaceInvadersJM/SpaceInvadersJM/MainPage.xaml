@@ -11,11 +11,22 @@
           HorizontalAlignment="Center" />
 
     <Canvas
-      Width="1920px"
-      Height="720px"
-      x:Name="mainWindows"
+      x:Name="invadersWindows"
+      Background="#030114"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Top"
+      Width="1360"
+      Height="650">
+    </Canvas>
+    
+    <Canvas
+      Width="1360px"
+      Height="65px"
+      x:Name="shipWindows"
       Background="#030114"
       IsTabStop="True"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Bottom"
       KeyDown="Canvas_KeyDown"
       >
 
@@ -24,10 +35,10 @@
         Source="https://images.vexels.com/media/users/3/152648/isolated/preview/93eaeec7d007682e38e8fd9b2f95878a-icono-plano-nave-espacial.png"
         Width="60px"
         Height="60px"
-        Canvas.Left="100px"
-        Canvas.Top="650px"
         Stretch="UniformToFill"
         />
     </Canvas>
+
+
   </StackPanel>
 </Page>

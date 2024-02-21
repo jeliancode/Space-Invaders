@@ -17,7 +17,7 @@ public sealed partial class MainPage : Page
     public MainPage()
     {
         this.InitializeComponent();
-        mainWindows.Focus(FocusState.Programmatic);
+        shipWindows.Focus(FocusState.Programmatic);
         KeyDown += Canvas_KeyDown;
         InitializeInvaders();
         StartGame();
@@ -82,37 +82,37 @@ public sealed partial class MainPage : Page
                 double top = row * (AlienSize + alienImage.Margin.Top + alienImage.Margin.Bottom);
                 alienImage.Margin = new Thickness(left, top, 0, 0);
 
-                mainWindows.Children.Add(alienImage);
+                invadersWindows.Children.Add(alienImage);
             }
         }
     }
 
     private void MoveAliens()
     {
-        double newX = Canvas.GetLeft(mainWindows.Children[0]) + (AlienSpeed * alienDirection);
+        double newX = Canvas.GetLeft(invadersWindows.Children[0]) + (AlienSpeed * alienDirection);
         double minY = 0;
-        double maxY = mainWindows.Height - (NumRows * AlienSize) - ((NumRows - 1) * 5);
-        double maxX = mainWindows.Width - (NumAliens * AlienSize) - ((NumAliens - 1) * 5);
+        double maxY = invadersWindows.Height - (NumRows * AlienSize) - ((NumRows - 1) * 5);
+        double maxX = invadersWindows.Width - (NumAliens * AlienSize) - ((NumAliens - 1) * 5);
 
         if (newX <= 0 || newX >= maxX)
         {
             alienDirection *= -1;
-            foreach (Image alien in mainWindows.Children)
-            {
+            foreach (Image alien in invadersWindows.Children)
+            { 
                 double newY = Canvas.GetTop(alien);
                 Canvas.SetTop(alien, newY + AlienSize);
             }
         }
         else
         {
-            foreach (Image alien in mainWindows.Children)
+            foreach (Image alien in invadersWindows.Children)
             {
                 double currentX = Canvas.GetLeft(alien);
                 Canvas.SetLeft(alien, currentX + (AlienSpeed * alienDirection));
             }
         }
 
-        foreach (Image alien in mainWindows.Children)
+        foreach (Image alien in invadersWindows.Children)
         {
             double currentY = Canvas.GetTop(alien);
             if (currentY >= maxY)
