@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"SpaceInvadersJM.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"SpaceInvadersJM.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}

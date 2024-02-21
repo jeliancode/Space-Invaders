@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "SpaceInvadersJM",
+  "display": "standalone",
+  "name": "SpaceInvadersJM",
+  "short_name": "SpaceInvadersJM",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

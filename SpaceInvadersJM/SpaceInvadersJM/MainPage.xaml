@@ -1,0 +1,33 @@
+﻿<Page x:Class="SpaceInvadersJM.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:SpaceInvadersJM"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+    <TextBlock AutomationProperties.AutomationId="HelloTextBlock"
+          Text="Space Invaders"
+          HorizontalAlignment="Center" />
+
+    <Canvas
+      Width="1920px"
+      Height="720px"
+      x:Name="mainWindows"
+      Background="#030114"
+      IsTabStop="True"
+      KeyDown="Canvas_KeyDown"
+      >
+
+      <Image
+        x:Name="playerShip"
+        Source="https://images.vexels.com/media/users/3/152648/isolated/preview/93eaeec7d007682e38e8fd9b2f95878a-icono-plano-nave-espacial.png"
+        Width="60px"
+        Height="60px"
+        Canvas.Left="100px"
+        Canvas.Top="650px"
+        Stretch="UniformToFill"
+        />
+    </Canvas>
+  </StackPanel>
+</Page>
