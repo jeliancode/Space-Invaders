@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="SpaceInvaders.GameOver"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpaceInvaders"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <Page.Resources>
+    <Style x:Key="LegoTextStyle" TargetType="TextBlock">
+      <Setter Property="FontSize" Value="20" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style x:Key="GreenButtonStyle" TargetType="Button">
+      <Setter Property="Foreground" Value="Green" />
+      <Setter Property="Background" Value="#00000000" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="10,5"/>
+      <Setter Property="FontSize" Value="20" />
+    </Style>
+
+  </Page.Resources>
+
+  <Grid>
+    <StackPanel HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                Margin="0,60,0,0">
+      <TextBlock Text="SAVE SCORE"
+                 Style="{StaticResource LegoTextStyle}"/>
+    </StackPanel>
+
+    <StackPanel HorizontalAlignment="Center"
+                Margin="0,200,0,0">
+      <TextBlock x:Name="score" Text="1231"
+                 Style="{StaticResource LegoTextStyle}"
+                 HorizontalAlignment="Center"
+                 Margin="0,0,0,50"/>
+      <TextBox x:Name="UserNameTextBox"
+               PlaceholderText="Nombre de Usuario"/>
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,120,0,0">
+      <Button x:Name="btnGuardar"
+              Content="Save" Style="{StaticResource GreenButtonStyle}"
+              Margin="10" Click="Guardar_Click"/>
+      <Button x:Name="btnVolverAJugar"
+              Content="Play Againg" Style="{StaticResource GreenButtonStyle}"
+              Margin="10" Click="VolverAJugar_Click"/>
+    </StackPanel>
+  </Grid>
+</Page>
